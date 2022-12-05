@@ -1,7 +1,24 @@
-import { useRecoilValue } from "recoil"
+import { useRecoilValue, useSetRecoilState } from "recoil"
 import { tema } from "recoilState/atom"
 
-// retorna o conteúdo do átomo de tema.
-export default function useTema() {
+/**
+ *
+ * @returns {string} - Retorna o tema atual
+ * @example
+ * const tema = useGetTema()
+ */
+export default function useGetTema(): string {
 	return useRecoilValue(tema)
+}
+
+/**
+ * 
+ * @returns {RecoilState<string>} - Retorna o tema atual
+ * @example
+ * const setTema = useSetTema()
+ * setTema("dark")
+ */
+export function useSetTema() {
+	const useSetTema = useSetRecoilState<string>(tema)
+	return useSetTema
 }
