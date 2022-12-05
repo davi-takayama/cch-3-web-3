@@ -1,13 +1,12 @@
-import React from "react";
-import "./App.css";
-import Teste from "./components/teste";
+import React from "react"
+import Routes from "./routes"
 
 function App() {
 	return (
 		<div className="App">
-			<Teste />
+			<Routes />
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App
