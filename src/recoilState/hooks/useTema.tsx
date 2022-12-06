@@ -7,7 +7,7 @@ import { tema } from "recoilState/atom"
  * @example
  * const tema = useGetTema()
  */
-export default function useGetTema(): string {
+export function useGetTema(): string {
 	return useRecoilValue(tema)
 }
 

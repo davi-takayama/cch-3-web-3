@@ -1,0 +1,96 @@
+@import "utils/styles/variables.module.scss";
+
+.cabecalho {
+    min-width: 100%;
+    width: fit-content;
+    &__navbar {
+        background-color: $cor-principal;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.1em 1.5vw;
+    }
+}
+
+.cabecalho__navbar_black {
+    background-color: $cor-secundaria;
+    
+}
+
+.favicon {
+    display: none;
+}
+
+.logo {
+    width: 18%;
+    padding: 0.2em;
+    margin-right: 8em;
+}
+
+.itens {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    margin-left: 1em;
+    text-decoration: none;
+    color: $detalhe-escuro;
+    opacity: 100%;
+    transition: 0.2s;
+}
+
+.links_black {
+    color: $branco;
+}
+
+.links:hover {
+    opacity: 50%;
+    transition: 0.2s;
+}
+
+.tema {
+    display: flex;
+    align-items: center;
+    background-color: $cor-botao;
+    padding: 0.2em;
+    border-radius: 100%;
+    opacity: 100%;
+    transition: 0.2s;
+    width: 5vh;
+    height: 4vh;
+}
+
+.tema:hover {
+    opacity: 50%;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.imagem_tema {
+    width: 100%;
+}
+
+.disable {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cabecalho{
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .favicon {
+        width: 10%;
+        display: inline;
+    }
+
+    .tema {
+        width: 7%;
+        height: 7%;
+    }
+}
