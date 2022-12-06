@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.image {
+    width: 50%;
+}
+
+.disabled {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container{
+        height: 80vh;
+    }
+
+    .image {
+        width: 90%;
+    }
+}
