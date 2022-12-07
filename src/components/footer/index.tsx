@@ -9,13 +9,13 @@ import React from "react"
 
 export default function Footer() {
 	//armazenando conteúdo do estado "tema" solicitado com seu hook personalizado.
-	const Mode = useGetTema()
+	const tema = useGetTema()
 
 	return (
 		<footer className={classNames({
 			[styles.rodape]: true,
 			//ativando ou desativando a classe do modo escuro de acordo com o estado.
-			[styles.dark_mode]: Mode === "dark" ? true : false
+			[styles.dark_mode]: tema === "dark" ? true : false
 		})}>
 			<FgtLogo aria-label="Logo da FGT, responsável pelos assets da página" className={styles.fgtLogo} />
 

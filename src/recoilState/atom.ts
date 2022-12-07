@@ -5,7 +5,7 @@ import { atom } from "recoil"
  * Tema
  * @description Tema do site
  * @type {atom}
- * @default "light"
+ * @default "dark"
  * @example
  * const [tema, setTema] = useRecoilState(tema)
  * setTema("dark")

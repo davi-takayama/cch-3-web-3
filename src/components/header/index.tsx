@@ -1,5 +1,5 @@
 import { useGetTema, useSetTema } from "recoilState/hooks/useTema"
-import mudarTema from "utils/functions/mudarTema"
+import changeTema from "utils/functions/changeTema"
 import styles from "./header.module.scss"
 import { Link } from "react-router-dom"
 import favicon from "assets/favicon.png"
@@ -11,41 +11,41 @@ import React from "react"
 
 export default function Header() {
 	//armazenando conteúdo do estado "tema" através de seu hook personalizado.
-	const Tema = useGetTema()
+	const tema = useGetTema()
 	//armazenando a função que define o tema com um hook personalizado.
-	const setTemaMode = useSetTema()
+	const setTema = useSetTema()
 
 	return (
 		<header className={styles.cabecalho}>
 			<nav className={classNames({
 				[styles.cabecalho__navbar]: true,
-				[styles.cabecalho__navbar_black]: Tema === "dark" ? true : false
+				[styles.cabecalho__navbar_black]: tema === "dark" ? true : false
 			})}>
 				<div className={styles.itens}>
 					<img src={favicon} alt="favicom TK" className={styles.favicon} />
 					<img src={logo} alt="Logo da Transport-Knowledge" className={styles.logo} />
 					<Link to={"/"} className={classNames({
 						[styles.links]: true,
-						[styles.links_black]: Tema === "dark" ? true : false
+						[styles.links_black]: tema === "dark" ? true : false
 					})}>Início</Link>
 					<Link to={"/add"} className={classNames({
 						[styles.links]: true,
-						[styles.links_black]: Tema === "dark" ? true : false
+						[styles.links_black]: tema === "dark" ? true : false
 					})}>Adicionar</Link>
 					<Link to={"/about"} className={classNames({
 						[styles.links]: true,
-						[styles.links_black]: Tema === "dark" ? true : false
+						[styles.links_black]: tema === "dark" ? true : false
 					})}>Sobre</Link>
 				</div>
 				{/* quando clicado chama a função de alterar o tema, passando a que define, e o conteúdo atual do tema */}
-				<div className={styles.tema} onClick={() => mudarTema(setTemaMode, Tema)}>
+				<div className={styles.tema} onClick={() => changeTema(setTema, tema)}>
 					<img src={moon} alt="Botão de tema escuro" className={classNames({
 						[styles.imagem_tema]: true,
-						[styles.disable]: Tema === "dark" ? true : false
+						[styles.disable]: tema === "dark" ? true : false
 					})} />
 					<img src={sun} alt="Botão de tema claro" className={classNames({
 						[styles.imagem_tema]: true,
-						[styles.disable]: Tema === "light" ? true : false
+						[styles.disable]: tema === "light" ? true : false
 					})} />
 				</div>
 			</nav>

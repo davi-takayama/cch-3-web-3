@@ -6,16 +6,16 @@ import classNames from "classnames"
 import React from "react"
 
 export default function NotFound() {
-	const mode = useGetTema()
+	const tema = useGetTema()
 	return (
 		<main className={styles.container}>
 			<img src={notFound} alt="Imagem de erro 404" className={classNames({
 				[styles.image]: true,
-				[styles.disabled]: mode === "dark"
+				[styles.disabled]: tema === "dark"
 			})} />
 			<img src={notFoundDark} alt="Imagem de erro 404" className={classNames({
 				[styles.image]: true,
-				[styles.disabled]: mode === "light"
+				[styles.disabled]: tema === "light"
 			})} />
 		</main>
 	)

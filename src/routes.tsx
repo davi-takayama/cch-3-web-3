@@ -9,12 +9,12 @@ import Home from "./views/home"
 import React from "react"
 
 export default function AppRoutes() {
-	const Mode = useGetTema()
+	const tema = useGetTema()
 	return (
 		<Router>
 			<main className={classNames({
 				[styles.container]: true,
-				[styles.container_black]: Mode === "dark" ? true : false
+				[styles.container_black]: tema === "dark" ? true : false
 			})}>
 				<Header />
 				<Routes>
