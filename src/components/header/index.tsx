@@ -1,5 +1,5 @@
 import { useGetTema, useSetTema } from "recoilState/hooks/useTema"
-import changeTema from "utils/functions/changeTema"
+import changeTema from "utils/functions/change-tema"
 import styles from "./header.module.scss"
 import { Link } from "react-router-dom"
 import favicon from "assets/favicon.png"

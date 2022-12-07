@@ -1,0 +1,133 @@
+{
+    "formats": [
+        {
+            "id": 0,
+            "name": "Car",
+            "image": "https://www.clipartmax.com/png/middle/330-3301382_a-driving-course-on-the-volkswagen-circuit-new-car-icon.png"
+        },
+        {
+            "id": 1,
+            "name": "Airplane",
+            "image": "http://cdn.onlinewebfonts.com/svg/img_259251.png"
+        },
+        {
+            "id": 2,
+            "name": "Train",
+            "image": "https://i.pinimg.com/originals/cf/58/4a/cf584aff36fb87c055a8a026bfcb859e.png"
+        },
+        {
+            "id": 3,
+            "name": "Boat",
+            "image": "https://cdn-icons-png.flaticon.com/512/861/861011.png"
+        }
+    ],
+    "brands": [
+        {
+            "id": 0,
+            "name": "Tesla Motors",
+            "description": "Empresa automotiva e de armazenamento de energia norte americana, que desenvolve, produz e vende automóveis elétricos de alto desempenho, componentes para motores e transmissões para veículos elétricos e produtos à base de baterias.",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png",
+            "website": "https://www.tesla.com/",
+            "vehicles": [
+                {
+                    "id": 0,
+                    "name": "Model S Plaid",
+                    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/538ac149-d103-4834-9d38-641d8ae447ef/bvlatuR/std/4096x2560/Homepage-Model-S-Desktop-LHD",
+                    "price": "$135.990,00",
+                    "year": "2022",
+                    "fuel": "Eletric",
+                    "transmition": "AWD",
+                    "power": "1.020 Hp",
+                    "torque": "1.424 Nm",
+                    "format": "0"
+                },
+                {
+                    "id": 1,
+                    "name": "Model 3 Performance",
+                    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/03e533bf-8b1d-463f-9813-9a597aafb280/bvlatuR/std/4096x2560/M3-Homepage-Desktop-LHD",
+                    "price": "$46.990,00",
+                    "year": "2022",
+                    "fuel": "Eletric",
+                    "transmition": "AWD",
+                    "power": "450 Hp",
+                    "torque": "639 Nm",
+                    "format": "0"
+                },
+                {
+                    "id": 2,
+                    "name": "Model X Plaid",
+                    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/ddc135ed-1638-40fb-8ab1-f8045059ecef/bvlatuR/std/4096x2560/Homepage-Model-X-Desktop-LHD",
+                    "price": "138.990,00",
+                    "year": "2022",
+                    "fuel": "Eletric",
+                    "transmition": "AWD",
+                    "power": "1.020 Hp",
+                    "torque": "1.020 Nm",
+                    "format": "0"
+                },
+                {
+                    "id": 3,
+                    "name": "Model Y Performance",
+                    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70",
+                    "price": "96.700,00",
+                    "year": "2022",
+                    "fuel": "Eletric",
+                    "transmition": "AWD",
+                    "power": "580 Hp",
+                    "torque": "639 Nm",
+                    "format": "0"
+                }
+            ]
+        }
+    ],
+    "vehicles": [
+        {
+            "id": 0,
+            "name": "Model S Plaid",
+            "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/538ac149-d103-4834-9d38-641d8ae447ef/bvlatuR/std/4096x2560/Homepage-Model-S-Desktop-LHD",
+            "price": "$135.990,00",
+            "year": "2022",
+            "fuel": "Eletric",
+            "transmition": "AWD",
+            "power": "1.020 Hp",
+            "torque": "1.424 Nm",
+            "format": "0"
+        },
+        {
+            "id": 1,
+            "name": "Model 3 Performance",
+            "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/03e533bf-8b1d-463f-9813-9a597aafb280/bvlatuR/std/4096x2560/M3-Homepage-Desktop-LHD",
+            "price": "$46.990,00",
+            "year": "2022",
+            "fuel": "Eletric",
+            "transmition": "AWD",
+            "power": "450 Hp",
+            "torque": "639 Nm",
+            "format": "0"
+        },
+        {
+            "id": 2,
+            "name": "Model X Plaid",
+            "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/ddc135ed-1638-40fb-8ab1-f8045059ecef/bvlatuR/std/4096x2560/Homepage-Model-X-Desktop-LHD",
+            "price": "138.990,00",
+            "year": "2022",
+            "fuel": "Eletric",
+            "transmition": "AWD",
+            "power": "1.020 Hp",
+            "torque": "1.020 Nm",
+            "format": "0"
+        },
+        {
+            "id": 3,
+            "name": "Model Y Performance",
+            "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70",
+            "price": "96.700,00",
+            "year": "2022",
+            "fuel": "Eletric",
+            "transmition": "AWD",
+            "power": "580 Hp",
+            "torque": "639 Nm",
+            "format": "0"
+        }
+    ]
+}
