@@ -1,5 +1,3 @@
-import IFormat from "./format"
-
 export default interface IVehicle {
 	id: string
 	name: string

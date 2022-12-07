@@ -45,8 +45,6 @@ export default function Home() {
 			const filtered = brands.filter(brand => brand.vehicles.some(vehicle => vehicle.format_id === selectedFormat.id))
 			setBrandsFiltered(filtered)
 		}
-
-		console.log("brands filtered", brandsFiltered)
 	}, [selectedFormat])
 
 	return (
