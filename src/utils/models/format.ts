@@ -1,5 +1,5 @@
 export default interface IFormat {
-    id: number
+    id: string
     name: string
     image: string
 }

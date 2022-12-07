@@ -1,7 +1,7 @@
 import IVehicle from "./vehicle"
 
 export default interface IBrand {
-    id: number
+    id: string
     name: string
     description: string
     logo: string

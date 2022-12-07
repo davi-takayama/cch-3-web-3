@@ -1,7 +1,7 @@
 import IFormat from "./format"
 
 export default interface IVehicle {
-	id: number
+	id: string
 	name: string
 	image: string
 	price: string
@@ -10,5 +10,5 @@ export default interface IVehicle {
 	transmission: string
 	power: string
 	torque: string
-	format: IFormat
+	format_id: string
 }
