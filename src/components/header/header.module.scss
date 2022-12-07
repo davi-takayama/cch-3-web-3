@@ -8,7 +8,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.1em 1.5vw;
+        padding: 0.2em 1.5vw;
     }
 }
 
@@ -21,19 +21,26 @@
     display: none;
 }
 
-.logo {
-    width: 18%;
-    padding: 0.2em;
-    margin-right: 8em;
-}
-
-.itens {
+.logotipo{
+    width: 33%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 60%;
+}
+
+.buttons {
+    width: 33%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .links {
-    margin-left: 1em;
     text-decoration: none;
     color: $detalhe-escuro;
     opacity: 100%;
@@ -49,6 +56,13 @@
     transition: 0.2s;
 }
 
+.temaButton{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33%;
+}
+
 .tema {
     display: flex;
     align-items: center;
@@ -58,7 +72,7 @@
     opacity: 100%;
     transition: 0.2s;
     width: 5vh;
-    height: 4vh;
+    height: 5vh;
 }
 
 .tema:hover {
@@ -76,21 +90,22 @@
 }
 
 @media (max-width: 768px) {
-    .cabecalho{
-        font-size: 1.2rem;
-    }
-
-    .logo {
+    .logo{
         display: none;
     }
 
-    .favicon {
-        width: 10%;
-        display: inline;
+    .favicon{
+        display: block;
+        width: 35%;
     }
 
     .tema {
-        width: 7%;
-        height: 7%;
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .links {
+        font-size: 1.5rem;
+        padding: 0 0.5em;
     }
 }

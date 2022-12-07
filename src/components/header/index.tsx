@@ -21,9 +21,12 @@ export default function Header() {
 				[styles.cabecalho__navbar]: true,
 				[styles.cabecalho__navbar_black]: tema === "dark" ? true : false
 			})}>
-				<div className={styles.itens}>
+				<section className={styles.logotipo}>
 					<img src={favicon} alt="favicom TK" className={styles.favicon} />
 					<img src={logo} alt="Logo da Transport-Knowledge" className={styles.logo} />
+				</section>
+
+				<section className={styles.buttons}>
 					<Link to={"/"} className={classNames({
 						[styles.links]: true,
 						[styles.links_black]: tema === "dark" ? true : false
@@ -36,18 +39,21 @@ export default function Header() {
 						[styles.links]: true,
 						[styles.links_black]: tema === "dark" ? true : false
 					})}>Sobre</Link>
-				</div>
-				{/* quando clicado chama a função de alterar o tema, passando a que define, e o conteúdo atual do tema */}
-				<div className={styles.tema} onClick={() => changeTema(setTema, tema)}>
-					<img src={moon} alt="Botão de tema escuro" className={classNames({
-						[styles.imagem_tema]: true,
-						[styles.disable]: tema === "dark" ? true : false
-					})} />
-					<img src={sun} alt="Botão de tema claro" className={classNames({
-						[styles.imagem_tema]: true,
-						[styles.disable]: tema === "light" ? true : false
-					})} />
-				</div>
+				</section>
+
+				<section className={styles.temaButton}>
+					{/* quando clicado chama a função de alterar o tema, passando a que define, e o conteúdo atual do tema */}
+					<div className={styles.tema} onClick={() => changeTema(setTema, tema)}>
+						<img src={moon} alt="Botão de tema escuro" className={classNames({
+							[styles.imagem_tema]: true,
+							[styles.disable]: tema === "dark" ? true : false
+						})} />
+						<img src={sun} alt="Botão de tema claro" className={classNames({
+							[styles.imagem_tema]: true,
+							[styles.disable]: tema === "light" ? true : false
+						})} />
+					</div>
+				</section>
 			</nav>
 		</header>
 	)
