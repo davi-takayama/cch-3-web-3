@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { useGetTema } from "recoilState/hooks/useTema"
-import styles from "./index.module.scss"
-import Header from "./components/header"
-import Footer from "./components/footer"
-import NotFound from "./views/notFound"
-import classNames from "classnames"
-import Home from "./views/home"
-import React from "react"
+import NotFound from "./views/notFound/not-found"
+import Header from "./components/header/header"
+import Footer from "./components/footer/footer"
 import AddVehicle from "views/add/add-vehicle"
+import styles from "./index.module.scss"
+import About from "views/about/about"
+import Home from "./views/home/home"
+import classNames from "classnames"
+import React from "react"
 
 export default function AppRoutes() {
 	const tema = useGetTema()
@@ -20,8 +21,9 @@ export default function AppRoutes() {
 				<Header />
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="add" element={<AddVehicle />} />
+					<Route path="about" element={<About/>} />
 					<Route path="*" element={<NotFound />} />
-					<Route path="cadastrar/veiculo" element={<AddVehicle />} />
 				</Routes>
 				<Footer />
 			</main>
