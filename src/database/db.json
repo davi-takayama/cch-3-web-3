@@ -78,6 +78,153 @@
                     "format_id": "0"
                 }
             ]
+        },
+        {
+            "id": "1",
+            "name": "Chevrolet",
+            "description": "Empresa norte americana de automóveis, fundada em 1908, que produz veículos comerciais, automóveis de luxo, esportivo e utilitários, além de motores e componentes para veículos. Tem o nome oficial de General Motors",
+            "logo": "https://i.pinimg.com/originals/e1/34/06/e134063bcdee260fcb8f76d93dab2d56.png",
+            "website": "https://www.chevrolet.com/",
+            "vehicles":[
+                {
+                    "id": "0",
+                    "name": "Corvette Z06",
+                    "image": "https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2023/performance/corvette-z06/mov/01-images/2023-z06-z07-performance-package-01.jpg?imwidth=600",
+                    "price": "U$106.395,00",
+                    "year": "2023",
+                    "fuel": "Gasoline",
+                    "transmission": "RWD",
+                    "power": "670 Hp",
+                    "torque": "623 Nm",
+                    "format_id": "0"
+                },
+                {
+                    "id": "1",
+                    "name": "Bolt EUV",
+                    "image": "https://www.chevrolet.com/electric/s3/uploads/chevrolet/F1_Bolt_EUV_Hero_Masthead_XL_fd0daee3fa.jpg?imwidth=1440",
+                    "price": "U$37.495,00",
+                    "year": "2022",
+                    "fuel": "Eletric",
+                    "transmission": "FWD",
+                    "power": "200 Hp",
+                    "torque": "266 Nm",
+                    "format_id": "0"
+                },
+                {
+                    "id": "2",
+                    "name": "Malibu",
+                    "image": "https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2023/cars/malibu/mov/01-images/colorizer/2023-malibu-1sp-gaz-colorizer.jpg?imwidth=960",
+                    "price": "U$25.995,00",
+                    "year": "2023",
+                    "fuel": "Gasoline",
+                    "transmission": "FWD",
+                    "power": "250 Hp",
+                    "torque": "266 Nm",
+                    "format_id": "0"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Airbus",
+            "description": "Empresa francesa de engenharia aeroespacial, fundada em 1970, que produz aeronaves civis e militares, além de componentes para a indústria aeroespacial.",
+            "logo": "https://logolook.net/wp-content/uploads/2021/01/Airbus-Logo-2010.png",
+            "website": "https://www.airbus.com/",
+            "vehicles":[
+                {
+                    "id": "0",
+                    "name": "A350-1000",
+                    "image": "https://www.mercadoeeventos.com.br/wp-content/uploads/2016/11/A350-1000-first-flight-1024x685.jpg",
+                    "price": "U$400.000.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "---",
+                    "power": "1.000 Hp",
+                    "torque": "1.000 Nm",
+                    "format_id": "1"
+                },
+                {
+                    "id": "1",
+                    "name": "A320neo",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/A320neo_LATAM_%2830934637733%29.jpg",
+                    "price": "U$100.000.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "---",
+                    "power": "1.000 Hp",
+                    "torque": "1.000 Nm",
+                    "format_id": "1"
+                },
+                {
+                    "id": "2",
+                    "name": "A380",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/A6-EDY_A380_Emirates_31_jan_2013_jfk_%288442269364%29_%28cropped%29.jpg",
+                    "price": "U$500.000.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "---",
+                    "power": "1.000 Hp",
+                    "torque": "1.000 Nm",
+                    "format_id": "1"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Aston Martin",
+            "description": "Empresa britânica de automóveis, fundada em 1913, que produz veículos de luxo, esportivos e utilitários, além de motores e componentes para veículos.",
+            "logo": "https://1000logos.net/wp-content/uploads/2020/02/Aston-Martin-Logo-1987.png",
+            "website": "https://www.astonmartin.com/",
+            "vehicles":[
+                {
+                    "id": "0",
+                    "name": "DBX",
+                    "image": "https://cdn.motor1.com/images/mgl/QEEOO/s1/aston-martin-dbx.jpg",
+                    "price": "U$200.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "AWD",
+                    "power": "550 Hp",
+                    "torque": "700 Nm",
+                    "format_id": "0"
+                },
+                {
+                    "id": "1",
+                    "name": "DBS Superleggera",
+                    "image": "https://fotos.jornaldocarro.estadao.com.br/uploads/2018/06/28152151/fc527cde-dbs-superleggera-14.jpg",
+                    "price": "U$300.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "RWD",
+                    "power": "725 Hp",
+                    "torque": "900 Nm",
+                    "format_id": "0"
+                },
+                {
+                    "id": "2",
+                    "name": "ACH130",
+                    "image": "https://cdn-cavok.nuneshost.com/wp-content/uploads/2020/10/ach130-aston-martin.jpg",
+                    "price": "U$1.000.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "---",
+                    "power": "1.000 Hp",
+                    "torque": "1.000 Nm",
+                    "format_id": "1"
+                },
+                {
+                    "id": "3",
+                    "name": "AM37S",
+                    "image": "https://cdn.boatinternational.com/convert/bi_prd/bi/library_images/3o2gVTUURuS3guBI4zw5_Aston-Martin-AM37S-speed-boat-hero.jpg/r%5Bwidth%5D=1920/3o2gVTUURuS3guBI4zw5_Aston-Martin-AM37S-speed-boat-hero.jpg",
+                    "price": "U$1.000.000,00",
+                    "year": "2022",
+                    "fuel": "Gasoline",
+                    "transmission": "---",
+                    "power": "1.000 Hp",
+                    "torque": "1.000 Nm",
+                    "format_id": "3"
+                }
+            ]
         }
     ],
     "vehicles": [
