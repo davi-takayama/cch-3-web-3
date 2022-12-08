@@ -18,6 +18,9 @@ export default function Home() {
 	const [brandsFiltered, setBrandsFiltered] = React.useState<IBrand[]>([])
 	const [selectedBrand, setSelectedBrand] = React.useState<IBrand | null>(null)
 
+	const listaMarcas = document.getElementById("lista-marcas")
+	const listaModelos = document.getElementById("lista-modelos")
+
 	async function getBrands() {
 		const response = await api.get("/brands")
 		if (response.status === 200) setBrands(response.data)
@@ -32,9 +35,17 @@ export default function Home() {
 		if (selectedFormat) {
 			const filtered = brands.filter(brand => brand.vehicles.some(vehicle => vehicle.format_id === selectedFormat.id))
 			setBrandsFiltered(filtered)
+
 		}
 		setSelectedBrand(null)
+		listaMarcas?.scrollIntoView({ behavior: "smooth" })
 	}, [selectedFormat])
+
+	useEffect(() => {
+		if (selectedBrand) {
+			listaModelos?.scrollIntoView({ behavior: "smooth" })
+		}
+	}, [selectedBrand])
 
 	return (
 		<main className={classNames({
@@ -48,16 +59,19 @@ export default function Home() {
 				selectedFormat={selectedFormat}
 			/>
 
+			<div id="lista-marcas"></div>
 			<ListaMarcas
 				setSelectedBrand={setSelectedBrand}
 				selectedBrand={selectedBrand}
 				brands={brandsFiltered}
 			/>
 
+			<div id="lista-modelos"></div>
 			<ListaModelos
+				selectedFormat={selectedFormat}
 				selectedBrand={selectedBrand}
 			/>
-			
+
 		</main>
 	)
 }
