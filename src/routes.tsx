@@ -7,6 +7,7 @@ import NotFound from "./views/notFound"
 import classNames from "classnames"
 import Home from "./views/home"
 import React from "react"
+import AddVehicle from "views/add/add-vehicle"
 
 export default function AppRoutes() {
 	const tema = useGetTema()
@@ -20,6 +21,7 @@ export default function AppRoutes() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="*" element={<NotFound />} />
+					<Route path="cadastrar/veiculo" element={<AddVehicle />} />
 				</Routes>
 				<Footer />
 			</main>

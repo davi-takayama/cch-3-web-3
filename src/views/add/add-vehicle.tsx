@@ -1,9 +1,10 @@
 import styles from "./add.module.scss"
 import React from "react"
 
-export default function Home() {
+export default function AddVehicle() {
 	return (
 		<main>
+            
 		</main>
 	)
 }

@@ -6,27 +6,22 @@ import axiosInstance from "../../utils/axios/axios-instance"
 import IBrand from "utils/models/brand"
 import IFormat from "utils/models/format"
 import IVehicle from "utils/models/vehicle"
+import ListaFormatos from "./lists/formats"
 
 export default function Home() {
 	const tema = useGetTema()
 	const api = axiosInstance
 
 	const [selectedFormat, setSelectedFormat] = React.useState<IFormat | null>(null)
-
-	const [format, setFormat] = React.useState<IFormat[]>([])
 	const [brands, setBrands] = React.useState<IBrand[]>([])
 	const [brandsFiltered, setBrandsFiltered] = React.useState<IBrand[]>([])
+	const [selectedBrand, setSelectedBrand] = React.useState<IBrand | null>(null)
 	const [vehicles, setVehicles] = React.useState<IVehicle[]>([])
 
 	async function getBrands() {
 		const response = await api.get("/brands")
 		if (response.status === 200) setBrands(response.data)
 		else console.log("Erro ao buscar as marcas")
-	}
-	async function getFormat() {
-		const response = await api.get("/formats")
-		if (response.status === 200) setFormat(response.data)
-		else console.log("Erro ao buscar os formatos")
 	}
 	async function getVehicles() {
 		const response = await api.get("/vehicles")
@@ -36,7 +31,6 @@ export default function Home() {
 
 	useEffect(() => {
 		getBrands()
-		getFormat()
 		getVehicles()
 	}, [])
 
@@ -45,6 +39,7 @@ export default function Home() {
 			const filtered = brands.filter(brand => brand.vehicles.some(vehicle => vehicle.format_id === selectedFormat.id))
 			setBrandsFiltered(filtered)
 		}
+		setSelectedBrand(null)
 	}, [selectedFormat])
 
 	return (
@@ -56,45 +51,11 @@ export default function Home() {
 
 			<ul>
 				<li>
-					<section className={styles.secao}>
-						<h2 className={classNames({
-							[styles.subTitulo]: true,
-							[styles.subTituloDark]: tema === "dark"
-						})}>
-							Selecione um tipo de veículo:
-						</h2>
-						<div className={styles.listagem}>
-							<ul>
-								{
-									format.map((format) => (
-										<li
-											key={format.id}
-											className={classNames({
-												[styles.item]: true,
-												[styles.itemDark]: tema === "dark"
-											})}
-											onClick={() => setSelectedFormat(format)}
-										>
-											<img
-												style={{
-													left: 0,
-													height: "5vh",
-													position: "relative",
-													marginRight: "1rem"
-												}}
-												src={format.image}
-												alt={format.name}
-											/>
-
-											<h2>
-												{format.name}
-											</h2>
-										</li>
-									))
-								}
-							</ul>
-						</div>
-					</section>
+					<ListaFormatos
+						setSelectedFormat={setSelectedFormat}
+						api={api} 
+						styles={styles}
+					/>
 				</li>
 
 				<li>
@@ -108,41 +69,41 @@ export default function Home() {
 						<div className={styles.listagem}>
 							<ul>
 								{
-									brandsFiltered
-										.map((brand) => (
-											<li
-												key={brand.id}
-												className={classNames({
-													[styles.item]: true,
-													[styles.itemDark]: tema === "dark"
-												})}
+									brandsFiltered.map((brand) => (
+										<li
+											key={brand.id}
+											className={classNames({
+												[styles.item]: true,
+												[styles.itemDark]: tema === "dark"
+											})}
+											onClick={() => setSelectedBrand(brand)}
+										>
+											<img
+												style={{
+													left: 0,
+													height: "10vh",
+													position: "relative",
+													marginRight: "1rem"
+												}}
+												src={brand.logo}
+												alt={brand.name}
+											/>
+
+											<div
+												style={{
+													margin: "0.3rem 1rem",
+												}}
 											>
-												<img
-													style={{
-														left: 0,
-														height: "10vh",
-														position: "relative",
-														marginRight: "1rem"
-													}}
-													src={brand.logo}
-													alt={brand.name}
-												/>
+												{brand.description}
+											</div>
 
-												<div
-													style={{
-														margin: "0.3rem 1rem",
-													}}
-												>
-													{brand.description}
-												</div>
-
-												<h3>
-													<a href={brand.website}>
-														{brand.name}
-													</a>
-												</h3>
-											</li>
-										))
+											<h3>
+												<a href={brand.website}>
+													{brand.name}
+												</a>
+											</h3>
+										</li>
+									))
 								}
 							</ul>
 						</div>
@@ -160,7 +121,7 @@ export default function Home() {
 						<div className={styles.listagem}>
 							<ul>
 								{
-									vehicles.map((vehicle) => (
+									selectedBrand?.vehicles.map((vehicle) => (
 										<li key={vehicle.id} className={classNames({
 											[styles.item]: true,
 											[styles.itemDark]: tema === "dark"
