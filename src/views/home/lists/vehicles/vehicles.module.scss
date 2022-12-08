@@ -1,0 +1,102 @@
+@import "utils/styles/variables.module.scss";
+
+.secao {
+    width: 100%;
+    margin: 2em 0;
+    
+}
+
+.subTitulo {
+    font-weight: 600;
+    padding: 0.5em 1em;
+    background: linear-gradient(to left, transparent 0%, $contra-fundo 100%);
+}
+
+.subTituloDark {
+    background: linear-gradient(to left, transparent 0%, $cor-principal 100%);
+}
+
+.subTitulo::before {
+    content: "- ";
+}
+
+.listagem {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.item {
+    width: 100%;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $contra-fundo;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    transition: 0.2s;
+}
+
+.listagem_veiculos{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+
+    &__item{
+        width: 25%;
+        margin: 1em 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $contra-fundo;
+        padding: 0.8em 0.6em;
+        border-radius: 0.5em;
+        transition: 0.2s;
+    }
+}
+
+.listagem_veiculosDark {
+    background-color: $cor-principal;
+}
+
+.tabela{
+    font-size: small;
+    width: 100%;
+    border: solid 1px $cor-secundaria;
+    border-collapse: collapse;
+    margin: 1em 0;
+
+    &__cabecalho{
+        border-color: $cor-secundaria;
+        text-align: center;
+    }
+
+    &__linha{
+        margin-top: 0.3rem;
+        border: solid 1px $cor-secundaria;
+        text-align: center;
+    }
+}
+td, th{
+    border-right: 1px solid $cor-secundaria;
+}
+
+@media screen and (max-width: 1200px) {
+    .listagem_veiculos{
+        &__item{
+            width: 40%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .listagem_veiculos{
+        &__item{
+            width: 95%;
+        }
+    }
+}

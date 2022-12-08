@@ -1,21 +1,20 @@
-import IFormat from "utils/models/format"
-import { AxiosInstance } from "axios"
-import classNames from "classnames"
-import React, { useEffect } from "react"
+import axiosInstance from "utils/axios/axios-instance"
 import { useGetTema } from "recoilState/hooks/useTema"
+import styles from "./formats.module.scss"
+import IFormat from "utils/models/format"
+import React, { useEffect } from "react"
+import classNames from "classnames"
 
 interface Props {
-	setSelectedFormat: React.Dispatch<React.SetStateAction<IFormat | null>>,
-	api: AxiosInstance,
-	styles: {
-		readonly [key: string]: string;
-	}
+	setSelectedFormat: React.Dispatch<React.SetStateAction<IFormat | null>>
+	selectedFormat: IFormat | null
 }
 
 export default function ListaFormatos(props: Props) {
-	const { setSelectedFormat, api, styles } = props
-	const tema = useGetTema()
 	const [formatList, setFormatList] = React.useState<IFormat[]>([])
+	const { setSelectedFormat, selectedFormat } = props
+	const tema = useGetTema()
+	const api = axiosInstance
 
 	async function getFormat() {
 		const response = await api.get("/formats")
@@ -43,7 +42,8 @@ export default function ListaFormatos(props: Props) {
 								key={format.id}
 								className={classNames({
 									[styles.item]: true,
-									[styles.itemDark]: tema === "dark"
+									[styles.itemDark]: tema === "dark",
+									[styles.itemSelected]: format.id === selectedFormat?.id
 								})}
 								onClick={() => setSelectedFormat(format)}
 							>
