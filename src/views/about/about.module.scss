@@ -1,0 +1,65 @@
+@import "utils/styles/variables.module.scss";
+
+.container {
+    color: $branco;
+    width: 100%;
+}
+
+.containerLight {
+    color: $detalhe-escuro;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.listagem {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.listagem_marcas{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+
+    &__item{
+        width: 25%;
+        margin: 1em 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $contra-fundo;
+        padding: 0.8em 0.8em;
+        border-radius: 0.5em;
+        transition: 0.2s;
+    }
+}
+
+.listagem_marcasDark {
+    background-color: $cor-principal;
+}
+
+@media screen and (max-width: 1200px) {
+    .listagem_marcas{
+        &__item{
+            width: 40%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .listagem_marcas{
+        &__item{
+            width: 95%;
+        }
+    }
+}
