@@ -7,13 +7,14 @@ import classNames from "classnames"
 
 interface Props {
 	setSelectedFormat: React.Dispatch<React.SetStateAction<IFormat | null>>
+	selectedFormat: IFormat | null
 }
 
 export default function ListaFormatos(props: Props) {
-	const api = axiosInstance
 	const [formatList, setFormatList] = React.useState<IFormat[]>([])
-	const { setSelectedFormat } = props
+	const { setSelectedFormat, selectedFormat } = props
 	const tema = useGetTema()
+	const api = axiosInstance
 
 	async function getFormat() {
 		const response = await api.get("/formats")
@@ -41,7 +42,8 @@ export default function ListaFormatos(props: Props) {
 								key={format.id}
 								className={classNames({
 									[styles.item]: true,
-									[styles.itemDark]: tema === "dark"
+									[styles.itemDark]: tema === "dark",
+									[styles.itemSelected]: format.id === selectedFormat?.id
 								})}
 								onClick={() => setSelectedFormat(format)}
 							>

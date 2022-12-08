@@ -58,7 +58,7 @@ export default function ListaModelos(props: Props) {
 											Combustível
 										</th>
 										<th>
-											Câmbio
+											Transmissão
 										</th>
 										<th>
 											Potência

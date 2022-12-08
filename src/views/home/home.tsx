@@ -45,11 +45,13 @@ export default function Home() {
 
 			<ListaFormatos
 				setSelectedFormat={setSelectedFormat}
+				selectedFormat={selectedFormat}
 			/>
 
 			<ListaMarcas
-				brands={brandsFiltered}
 				setSelectedBrand={setSelectedBrand}
+				selectedBrand={selectedBrand}
+				brands={brandsFiltered}
 			/>
 
 			<ListaModelos

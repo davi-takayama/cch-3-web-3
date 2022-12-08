@@ -3,7 +3,7 @@
 .secao {
     width: 100%;
     margin: 2em 0;
-    
+
 }
 
 .subTitulo {
@@ -45,4 +45,8 @@
     background-color: $cor-botao;
     transition: 0.2s;
     cursor: pointer;
+}
+
+.itemSelected {
+    background-color: $cor-botao;
 }

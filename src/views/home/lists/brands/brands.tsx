@@ -6,11 +6,12 @@ import React from "react"
 
 interface Props {
 	setSelectedBrand: React.Dispatch<React.SetStateAction<IBrand | null>>,
+	selectedBrand: IBrand | null,
 	brands: IBrand[]
 }
 
 export default function ListaMarcas(props: Props) {
-	const { setSelectedBrand, brands } = props
+	const { setSelectedBrand, selectedBrand, brands } = props
 	const tema = useGetTema()
 
 	return (
@@ -29,7 +30,8 @@ export default function ListaMarcas(props: Props) {
 								key={brand.id}
 								className={classNames({
 									[styles.item]: true,
-									[styles.itemDark]: tema === "dark"
+									[styles.itemDark]: tema === "dark",
+									[styles.itemSelected]: brand.id === selectedBrand?.id
 								})}
 								onClick={() => setSelectedBrand(brand)}
 							>
