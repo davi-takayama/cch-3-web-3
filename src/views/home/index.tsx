@@ -117,7 +117,30 @@ export default function Home() {
 													[styles.itemDark]: tema === "dark"
 												})}
 											>
-												{brand.name}
+												<img
+													style={{
+														left: 0,
+														height: "10vh",
+														position: "relative",
+														marginRight: "1rem"
+													}}
+													src={brand.logo}
+													alt={brand.name}
+												/>
+
+												<div
+													style={{
+														margin: "0.3rem 1rem",
+													}}
+												>
+													{brand.description}
+												</div>
+
+												<h3>
+													<a href={brand.website}>
+														{brand.name}
+													</a>
+												</h3>
 											</li>
 										))
 								}
