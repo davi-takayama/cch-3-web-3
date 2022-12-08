@@ -53,7 +53,7 @@ export default function Home() {
 				<li>
 					<ListaFormatos
 						setSelectedFormat={setSelectedFormat}
-						api={api} 
+						api={api}
 						styles={styles}
 					/>
 				</li>
@@ -118,17 +118,79 @@ export default function Home() {
 						})}>
 							Selecione um modelo:
 						</h2>
-						<div className={styles.listagem}>
-							<ul>
-								{
-									selectedBrand?.vehicles.map((vehicle) => (
-										<li key={vehicle.id} className={classNames({
-											[styles.item]: true,
+						<div className={styles.listagem_veiculos}>
+							{
+								selectedBrand?.vehicles.map((vehicle) => (
+									<div
+										key={vehicle.id}
+										className={classNames({
+											[styles.listagem_veiculos__item]: true,
 											[styles.itemDark]: tema === "dark"
-										})}>{vehicle.name}</li>
-									))
-								}
-							</ul>
+										})}
+									>
+										<img
+											style={{
+												left: 0,
+												height: "20vh",
+												position: "relative",
+												margin: "0 1rem"
+											}}
+											src={vehicle.image}
+											alt={vehicle.name}
+										/>
+										<h2>
+											{vehicle.name}
+										</h2>
+										<br />
+										<h3>
+											{vehicle.price}
+										</h3>
+
+										<table className={styles.tabela}>
+											<thead className={styles.tabela__cabecalho}>
+												<tr>
+													<th>
+														Ano
+													</th>
+													<th>
+														Combustível
+													</th>
+													<th>
+														Câmbio
+													</th>
+													<th>
+														Potência
+													</th>
+													<th>
+														Torque
+													</th>
+
+												</tr>
+											</thead>
+											<tbody className={styles.tabela__linha}>
+												<tr>
+													<td>
+														{vehicle.year ?? "----"}
+													</td>
+													<td>
+														{vehicle.fuel ?? "----"}
+													</td>
+													<td>
+														{vehicle.transmission ?? "----"}
+													</td>
+													<td>
+														{vehicle.power ?? "----"}
+													</td>
+													<td>
+														{vehicle.torque ?? "----"}
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+								))
+							}
 						</div>
 					</section>
 				</li>
