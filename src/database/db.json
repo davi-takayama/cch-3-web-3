@@ -36,7 +36,7 @@
                     "price": "U$135.990,00",
                     "year": "2022",
                     "fuel": "Eletric",
-                    "transmition": "AWD",
+                    "transmission": "AWD",
                     "power": "1.020 Hp",
                     "torque": "1.424 Nm",
                     "format_id": "0"
@@ -48,7 +48,7 @@
                     "price": "U$46.990,00",
                     "year": "2022",
                     "fuel": "Eletric",
-                    "transmition": "AWD",
+                    "transmission": "AWD",
                     "power": "450 Hp",
                     "torque": "639 Nm",
                     "format_id": "0"
@@ -60,7 +60,7 @@
                     "price": "U$138.990,00",
                     "year": "2022",
                     "fuel": "Eletric",
-                    "transmition": "AWD",
+                    "transmission": "AWD",
                     "power": "1.020 Hp",
                     "torque": "1.020 Nm",
                     "format_id": "0"
@@ -72,7 +72,7 @@
                     "price": "U$96.700,00",
                     "year": "2022",
                     "fuel": "Eletric",
-                    "transmition": "AWD",
+                    "transmission": "AWD",
                     "power": "580 Hp",
                     "torque": "639 Nm",
                     "format_id": "0"
@@ -88,7 +88,7 @@
             "price": "U$135.990,00",
             "year": "2022",
             "fuel": "Eletric",
-            "transmition": "AWD",
+            "transmission": "AWD",
             "power": "1.020 Hp",
             "torque": "1.424 Nm",
             "format_id": "0"
@@ -100,7 +100,7 @@
             "price": "U$46.990,00",
             "year": "2022",
             "fuel": "Eletric",
-            "transmition": "AWD",
+            "transmission": "AWD",
             "power": "450 Hp",
             "torque": "639 Nm",
             "format_id": "0"
@@ -112,7 +112,7 @@
             "price": "U$138.990,00",
             "year": "2022",
             "fuel": "Eletric",
-            "transmition": "AWD",
+            "transmission": "AWD",
             "power": "1.020 Hp",
             "torque": "1.020 Nm",
             "format_id": "0"
@@ -124,7 +124,7 @@
             "price": "U$96.700,00",
             "year": "2022",
             "fuel": "Eletric",
-            "transmition": "AWD",
+            "transmission": "AWD",
             "power": "580 Hp",
             "torque": "639 Nm",
             "format_id": "0"

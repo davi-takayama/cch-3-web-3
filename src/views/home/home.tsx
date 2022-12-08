@@ -142,7 +142,7 @@ export default function Home() {
 												Combustível
 											</th>
 											<th>
-												Câmbio
+												Transmissão
 											</th>
 											<th>
 												Potência
