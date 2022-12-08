@@ -1,0 +1,48 @@
+@import "utils/styles/variables.module.scss";
+
+.secao {
+    width: 100%;
+    margin: 2em 0;
+    
+}
+
+.subTitulo {
+    font-weight: 600;
+    padding: 0.5em 1em;
+    background: linear-gradient(to left, transparent 0%, $contra-fundo 100%);
+}
+
+.subTituloDark {
+    background: linear-gradient(to left, transparent 0%, $cor-principal 100%);
+}
+
+.subTitulo::before {
+    content: "- ";
+}
+
+.listagem {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.item {
+    width: 100%;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $contra-fundo;
+    padding: 0.2em 0.8em;
+    border-radius: 0.5em;
+    transition: 0.2s;
+}
+
+.itemDark {
+    background-color: $cor-principal;
+}
+
+.item:hover {
+    background-color: $cor-botao;
+    transition: 0.2s;
+    cursor: pointer;
+}
