@@ -1,27 +1,29 @@
 {
-    "formats": [
-        {
-            "id": "0",
-            "name": "Car",
-            "image": "https://cdn.iconscout.com/icon/free/png-256/car-1093-459261.png"
-        },
-        {
-            "id": "1",
-            "name": "Airplane",
-            "image": "http://cdn.onlinewebfonts.com/svg/img_259251.png"
-        },
-        {
-            "id": "2",
-            "name": "Train",
-            "image": "https://i.pinimg.com/originals/cf/58/4a/cf584aff36fb87c055a8a026bfcb859e.png"
-        },
-        {
-            "id": "3",
-            "name": "Boat",
-            "image": "https://cdn-icons-png.flaticon.com/512/861/861011.png"
-        }
-    ],
-    "brands": [
+  "formats": [
+    {
+      "id": "0",
+      "name": "Car",
+      "image": "https://cdn.iconscout.com/icon/free/png-256/car-1093-459261.png"
+    },
+    {
+      "id": "1",
+      "name": "Airplane",
+      "image": "http://cdn.onlinewebfonts.com/svg/img_259251.png"
+    },
+    {
+      "id": "2",
+      "name": "Train",
+      "image": "https://i.pinimg.com/originals/cf/58/4a/cf584aff36fb87c055a8a026bfcb859e.png"
+    },
+    {
+      "id": "3",
+      "name": "Boat",
+      "image": "https://cdn-icons-png.flaticon.com/512/861/861011.png"
+    }
+  ],
+  "brands": [
+    {
+      "vehicles": [
         {
             "id": "0",
             "name": "Tesla Motors",
