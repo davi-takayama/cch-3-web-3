@@ -93,24 +93,24 @@ Any lint errors could be seen in the development console.
 
 > Dark Mode pallet:
 > 
->> cor-principal: ${\color{#aebdca}\#aebdca}$
+>> cor-principal: ${\color{#aebdca}aebdca}$
 >
->> cor-secundaria: ${\color{#6988a4}\#6988a4}$
+>> cor-secundaria: ${\color{#6988a4}6988a4}$
 >
->> branco: ${\color{#ffffff}\#ffffff}$
+>> branco: ${\color{#ffffff}ffffff}$
 >
->> cor-botao: ${\color{#1e89d6}\#1e89d6}$
+>> cor-botao: ${\color{#1e89d6}1e89d6}$
 >
->> fundo-escuro: ${\color{#202124}\#202124}$
+>> fundo-escuro: ${\color{#202124}202124}$
 >
 
 > Light Mode pallet:
 >
->>contra-fundo: ${\color{#e3ddd0}\#e3ddd0}$
+>>contra-fundo: ${\color{#e3ddd0}e3ddd0}$
 >
->>fundo-claro: ${\color{#f5efe6}\#f5efe6}$
+>>fundo-claro: ${\color{#f5efe6}f5efe6}$
 >
->>cor-botao: ${\color{#1e89d6}\#1e89d6}$
+>>cor-botao: ${\color{#1e89d6}1e89d6}$
 >
 
 ***
