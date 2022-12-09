@@ -2,6 +2,7 @@ import axiosInstance from "utils/axios/axios-instance"
 import IFormat from "utils/models/format"
 import React, { useEffect } from "react"
 import IBrand from "utils/models/brand"
+import IVehicle from "utils/models/vehicle"
 
 export default function AddVehicle() {
 	const api = axiosInstance
@@ -36,39 +37,22 @@ export default function AddVehicle() {
 	useEffect(() => {
 		setBrand_id(brands[0]?.id)
 		setFormat_id(formats[0]?.id)
-	}, [format_id, brand_id])
+	}, [formats, brands])
 
 	function submitForm() {
-		api.post("/vehicles", {
-			id: generateUniqueId(),
-			format_id: format_id,
-			name: name,
-			image: image,
-			price: price,
-			year: year,
-			fuel: fuel,
-			transmission: transmission,
-			power: power,
-			torque: torque
-		}).then((response) => {
-			console.log(response)
+		const vehicle: IVehicle = { id: generateUniqueId(), format_id: format_id, name: name, image: image, price: price, year: year, fuel: fuel, transmission: transmission, power: power, torque: torque }
+
+		api.post("/vehicles", vehicle).then((response) => {
+			console.log(response.data)
 		})
 
-		api.put(`/brands/${brand_id}`, {
-			vehicles: [...brands.find((brand) => brand.id === brand_id)?.vehicles ?? [], {
-				id: generateUniqueId(),
-				format_id: format_id,
-				name: name,
-				image: image,
-				price: price,
-				year: year,
-				fuel: fuel,
-				transmission: transmission,
-				power: power,
-				torque: torque
-			}]
-		}).then((response) => {
-			console.log(response)
+		api.get(`/brands/${brand_id}`).then((response) => {
+			const brand = response.data
+			brand.vehicles.push(vehicle)
+
+			api.put(`/brands/${brand_id}`, brand).then((response) => {
+				console.log(response.data)
+			})
 		})
 	}
 
