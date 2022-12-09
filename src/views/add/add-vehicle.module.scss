@@ -1,0 +1,56 @@
+@import "utils/styles/variables.module.scss";
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.formulario{
+    background-color: $contra-fundo;
+    width: 30%;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 2em 0;
+    text-align: start;
+}
+
+.formularioDark{
+    background-color: $cor-secundaria;
+    color: $branco;
+}
+
+.campo{
+    margin: 1em 2em;
+    border-radius: 0.4em;
+    padding: 0.4em;
+}
+
+.subTitulo {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.botao{
+    padding: 0.8em;
+    border-radius: 0.5em;
+    background-color: $fundo-claro;
+}
+
+.botaoDark{
+    background-color: $cor-principal;
+}
+
+.botao:hover{
+    background-color: $cor-botao;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .formulario{
+        width: 75%;
+    }
+}

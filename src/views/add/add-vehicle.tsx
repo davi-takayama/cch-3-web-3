@@ -1,8 +1,11 @@
 import axiosInstance from "utils/axios/axios-instance"
-import IFormat from "utils/models/format"
+import { useGetTema } from "recoilState/hooks/useTema"
 import React, { useEffect, useState } from "react"
-import IBrand from "utils/models/brand"
+import styles from "./add-vehicle.module.scss"
 import IVehicle from "utils/models/vehicle"
+import IFormat from "utils/models/format"
+import IBrand from "utils/models/brand"
+import classNames from "classnames"
 
 export default function AddVehicle() {
 	const api = axiosInstance
@@ -25,6 +28,7 @@ export default function AddVehicle() {
 	const [website, setWebsite] = useState("")
 	const [brandName, setBrandName] = useState("")
 
+	const tema = useGetTema()
 
 	async function getInfo() {
 		await api.get("/formats").then((response) => {
@@ -82,6 +86,7 @@ export default function AddVehicle() {
 		setLogo("")
 		setWebsite("")
 		setDescription("")
+		getInfo()
 	}
 
 	function generateUniqueId() {
@@ -94,12 +99,21 @@ export default function AddVehicle() {
 	}
 
 	return (
-		<main>
-			<form>
-				<h2>Adicionar veículo</h2>
+		<main className={styles.container}>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault()
+					submitFormVehicle()
+				}}
+				className={classNames({
+					[styles.formulario]: true,
+					[styles.formularioDark]: tema === "dark"
+				})}>
+				<h2 className={styles.subTitulo}>Adicionar veículo</h2>
 
 				<label htmlFor="name">Nome</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="name"
@@ -112,6 +126,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="image">Link da imagem</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="image"
@@ -124,6 +139,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="price">Preço</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="price"
@@ -136,6 +152,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="year">Ano</label>
 				<input
+					className={styles.campo}
 					required
 					type="number"
 					name="year"
@@ -148,6 +165,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="fuel">Combustível</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="fuel"
@@ -160,6 +178,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="transmission">Transmissão</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="transmission"
@@ -172,6 +191,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="power">Potência</label>
 				<input
+					className={styles.campo}
 					required type="text" name="power" id="power"
 					value={power}
 					onChange={(e) => setPower(e.target.value)}
@@ -181,6 +201,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="torque">Torque</label>
 				<input
+					className={styles.campo}
 					required type="text" name="torque" id="torque"
 					value={torque}
 					onChange={(e) => setTorque(e.target.value)}
@@ -189,7 +210,7 @@ export default function AddVehicle() {
 				<br />
 
 				<label htmlFor="format">Formato</label>
-				<select name="format" id="format"
+				<select className={styles.campo} name="format" id="format"
 					value={format_id}
 					onChange={(e) => setFormat_id(e.target.value)}
 				>
@@ -198,8 +219,10 @@ export default function AddVehicle() {
 					))}
 				</select>
 
+				<br />
+
 				<label htmlFor="brand">Marca</label>
-				<select name="brand" id="brand"
+				<select className={styles.campo} name="brand" id="brand"
 					value={brand_id}
 					onChange={(e) => setBrand_id(e.target.value)}
 				>
@@ -209,14 +232,26 @@ export default function AddVehicle() {
 				</select>
 
 				<br />
+				<button className={classNames({
+					[styles.botao]: true,
+					[styles.botaoDark]: tema === "dark"
+				})} type="submit">Adicionar</button>
 			</form>
-			<button onClick={submitFormVehicle}>Adicionar</button>
 
-			<form>
-				<h2>Adicionar marca</h2>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault()
+					submitFormBrand()
+				}}
+				className={classNames({
+					[styles.formulario]: true,
+					[styles.formularioDark]: tema === "dark"
+				})}>
+				<h2 className={styles.subTitulo}>Adicionar marca</h2>
 
 				<label htmlFor="name">Nome</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="name"
@@ -229,6 +264,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="image">Link da imagem</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="image"
@@ -241,6 +277,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="website">Website</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="website"
@@ -253,6 +290,7 @@ export default function AddVehicle() {
 
 				<label htmlFor="description">Descrição</label>
 				<input
+					className={styles.campo}
 					required
 					type="text"
 					name="description"
@@ -262,9 +300,11 @@ export default function AddVehicle() {
 				/>
 
 				<br />
-
+				<button className={classNames({
+					[styles.botao]: true,
+					[styles.botaoDark]: tema === "dark"
+				})} type="submit">Adicionar</button>
 			</form>
-			<button onClick={submitFormBrand}>Adicionar</button>
 		</main>
 	)
 }
