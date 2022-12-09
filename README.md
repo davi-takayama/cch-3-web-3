@@ -112,3 +112,10 @@ Any lint errors could be seen in the development console.
 >
 >>cor-botao: ${\color{#1e89d6}\#1e89d6}$
 >
+
+***
+>Developed by:
+>
+>Daniel Fonseca da Silva........... RA: 2315807
+>
+>Davi Gil Brito Vaz Takayama... RA: 2316374
