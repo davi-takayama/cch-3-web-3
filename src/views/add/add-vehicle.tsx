@@ -1,24 +1,30 @@
 import axiosInstance from "utils/axios/axios-instance"
 import IFormat from "utils/models/format"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import IBrand from "utils/models/brand"
 import IVehicle from "utils/models/vehicle"
 
 export default function AddVehicle() {
 	const api = axiosInstance
-	const [formats, setFormats] = React.useState<IFormat[]>([])
-	const [brands, setBrands] = React.useState<IBrand[]>([])
+	const [formats, setFormats] = useState<IFormat[]>([])
+	const [brands, setBrands] = useState<IBrand[]>([])
 
-	const [name, setName] = React.useState("")
-	const [image, setImage] = React.useState("")
-	const [price, setPrice] = React.useState("")
-	const [year, setYear] = React.useState(0)
-	const [fuel, setFuel] = React.useState("")
-	const [transmission, setTransmission] = React.useState("")
-	const [power, setPower] = React.useState("")
-	const [torque, setTorque] = React.useState("")
-	const [format_id, setFormat_id] = React.useState("0")
-	const [brand_id, setBrand_id] = React.useState<string>()
+	const [vehicleName, setVehicleName] = useState("")
+	const [image, setImage] = useState("")
+	const [price, setPrice] = useState("")
+	const [year, setYear] = useState(0)
+	const [fuel, setFuel] = useState("")
+	const [transmission, setTransmission] = useState("")
+	const [power, setPower] = useState("")
+	const [torque, setTorque] = useState("")
+	const [format_id, setFormat_id] = useState("0")
+	const [brand_id, setBrand_id] = useState<string>()
+
+	const [description, setDescription] = useState("")
+	const [logo, setLogo] = useState("")
+	const [website, setWebsite] = useState("")
+	const [brandName, setBrandName] = useState("")
+
 
 	async function getInfo() {
 		await api.get("/formats").then((response) => {
@@ -39,14 +45,14 @@ export default function AddVehicle() {
 		setFormat_id(formats[0]?.id)
 	}, [formats, brands])
 
-	function submitForm() {
-		const vehicle: IVehicle = { id: generateUniqueId(), format_id: format_id, name: name, image: image, price: price, year: year, fuel: fuel, transmission: transmission, power: power, torque: torque }
+	async function submitFormVehicle() {
+		const vehicle: IVehicle = { id: generateUniqueId(), format_id: format_id, name: vehicleName, image: image, price: price, year: year, fuel: fuel, transmission: transmission, power: power, torque: torque }
 
-		api.post("/vehicles", vehicle).then((response) => {
+		await api.post("/vehicles", vehicle).then((response) => {
 			console.log(response.data)
 		})
 
-		api.get(`/brands/${brand_id}`).then((response) => {
+		await api.get(`/brands/${brand_id}`).then((response) => {
 			const brand = response.data
 			brand.vehicles.push(vehicle)
 
@@ -54,6 +60,28 @@ export default function AddVehicle() {
 				console.log(response.data)
 			})
 		})
+
+		setVehicleName("")
+		setImage("")
+		setPrice("")
+		setYear(0)
+		setFuel("")
+		setTransmission("")
+		setPower("")
+		setTorque("")
+	}
+
+	function submitFormBrand() {
+		const newBrand: IBrand = { id: generateUniqueId(), name: brandName, logo: logo, website: website, vehicles: [], description: description }
+
+		api.post("/brands", newBrand).then((response) => {
+			console.log(response.data)
+		})
+
+		setBrandName("")
+		setLogo("")
+		setWebsite("")
+		setDescription("")
 	}
 
 	function generateUniqueId() {
@@ -62,20 +90,22 @@ export default function AddVehicle() {
 				.toString(16)
 				.substring(1)
 		}
-		return s4() + s4() + "-" + s4() + "-" + s4() + "-"
+		return s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4()
 	}
 
 	return (
 		<main>
 			<form>
+				<h2>Adicionar veículo</h2>
+
 				<label htmlFor="name">Nome</label>
 				<input
 					required
 					type="text"
 					name="name"
 					id="name"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
+					value={vehicleName}
+					onChange={(e) => setVehicleName(e.target.value)}
 				/>
 
 				<br />
@@ -179,10 +209,62 @@ export default function AddVehicle() {
 				</select>
 
 				<br />
+			</form>
+			<button onClick={submitFormVehicle}>Adicionar</button>
+
+			<form>
+				<h2>Adicionar marca</h2>
+
+				<label htmlFor="name">Nome</label>
+				<input
+					required
+					type="text"
+					name="name"
+					id="name"
+					value={brandName}
+					onChange={(e) => setBrandName(e.target.value)}
+				/>
+
+				<br />
+
+				<label htmlFor="image">Link da imagem</label>
+				<input
+					required
+					type="text"
+					name="image"
+					id="image"
+					value={logo}
+					onChange={(e) => setLogo(e.target.value)}
+				/>
+
+				<br />
+
+				<label htmlFor="website">Website</label>
+				<input
+					required
+					type="text"
+					name="website"
+					id="website"
+					value={website}
+					onChange={(e) => setWebsite(e.target.value)}
+				/>
+
+				<br />
+
+				<label htmlFor="description">Descrição</label>
+				<input
+					required
+					type="text"
+					name="description"
+					id="description"
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+
+				<br />
 
 			</form>
-			<button onClick={submitForm}>Adicionar</button>
-
+			<button onClick={submitFormBrand}>Adicionar</button>
 		</main>
 	)
 }
